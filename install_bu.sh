@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 if  which bitcoin-cli 2>/dev/null; then
     echo 'bitcoin exist'
-    bitcoin-cli backwallet /tmp/backp.dat
+    bitcoin-cli backupwallet /tmp/backp.dat
     bitcoin-cli stop
 else
     echo 'bitcoin does not exist'
