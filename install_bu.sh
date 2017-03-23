@@ -12,3 +12,4 @@ fi
 #sudo add-apt-repository ppa:bitcoin-unlimited/bu-ppa-nightly
 #sudo apt-get update
 #sudo apt-get install bitcoind
+bitcoind --daemon
