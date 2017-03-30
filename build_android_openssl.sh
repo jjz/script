@@ -1,4 +1,6 @@
 #!/bin/bash
+set -x
+set -e
 # Cross-compile environment for Android on ARMv7 and x86
 #
 # Contents licensed under the terms of the OpenSSL license
@@ -75,22 +77,22 @@ fi
 # http://groups.google.com/group/android-ndk/browse_thread/thread/a998e139aca71d77
 if [ -z "$ANDROID_NDK_ROOT" ] || [ ! -d "$ANDROID_NDK_ROOT" ]; then
   echo "Error: ANDROID_NDK_ROOT is not a valid path. Please edit this script."
-  # echo "$ANDROID_NDK_ROOT"
-  # exit 1
+  echo "$ANDROID_NDK_ROOT"
+  exit 1
 fi
 
 # Error checking
 if [ ! -d "$ANDROID_NDK_ROOT/toolchains" ]; then
   echo "Error: ANDROID_NDK_ROOT/toolchains is not a valid path. Please edit this script."
-  # echo "$ANDROID_NDK_ROOT/toolchains"
-  # exit 1
+  echo "$ANDROID_NDK_ROOT/toolchains"
+  exit 1
 fi
 
 # Error checking
 if [ ! -d "$ANDROID_NDK_ROOT/toolchains/$_ANDROID_EABI" ]; then
   echo "Error: ANDROID_EABI is not a valid path. Please edit this script."
-  # echo "$ANDROID_NDK_ROOT/toolchains/$_ANDROID_EABI"
-  # exit 1
+  echo "$ANDROID_NDK_ROOT/toolchains/$_ANDROID_EABI"
+  exit 1
 fi
 
 #####################################################################
@@ -232,12 +234,17 @@ if [ ! -z "$VERBOSE" ] && [ "$VERBOSE" != "0" ]; then
   echo "ANDROID_DEV: `echo $ANDROID_DEV`"
 fi
 
-cd openssl-1.0.1t
+cd openssl
+
 make clean
+
 perl -pi -e 's/install: all install_docs install_sw/install: install_docs install_sw/g' Makefile.org
+
 ./config shared no-ssl2 no-ssl3 no-comp no-hw no-engine --openssldir=/usr/local/ssl/$ANDROID_API
 
 make depend
+
 make all
+
 sudo -E make install CC=$ANDROID_TOOLCHAIN/arm-linux-androideabi-gcc RANLIB=$ANDROID_TOOLCHAIN/arm-linux-androideabi-ranlib
 
