@@ -11,7 +11,6 @@ if [ ! -d "$bitcoin_path" ]; then
     git clone git@github.com:btc1/bitcoin.git $bitcoin_path
     sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
     sudo apt-get install libboost-all-dev
-    sudo apt-get install libdb4.8-dev libdb4.8++-dev
     cd $bitcoin_path
     git checkout segwit2x
 else
