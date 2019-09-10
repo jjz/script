@@ -3,12 +3,12 @@ matrix:
     - ft
     - depoly
   include:
-    - &unit_test
-      language: go
+    - language: go
       go: 1.12.x
       script: echo go job
-    - <<: *unit_test
-      stage: unit_test
+    - stage: ft
+      language: go
+      go: 1.12.x
       script: go env
     - &depoly
       stage: depoly
