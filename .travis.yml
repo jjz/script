@@ -1,9 +1,9 @@
-matrix:
+jobs:
 
   stages:
     - ft
     - depoly
-  jobs:
+  include:
     - language: go
       go: 1.12.x
       script: echo go job
