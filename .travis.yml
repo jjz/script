@@ -9,7 +9,8 @@ matrix:
       language: go
       go: 1.12.x
       script: go env
-    - depoly: &ft_job
+    - depoly:
+    - &ft_job
       language: python
       python: 3.7
       script:
