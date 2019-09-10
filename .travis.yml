@@ -10,11 +10,10 @@ matrix:
       go: 1.12.x
       script: go env
     - stage: depoly
-      script: skip
-        depoly: &ft_job
-        language: python
-        python: 3.7
+      language: python
+      python: 3.7
+      script: echo python 1
     - stage: depoly
-      deploy:
-        <<: *ft_job
-        script: python --version
+      language: python
+      python: 3.7
+      script: echo python 2
