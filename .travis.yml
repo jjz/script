@@ -1,10 +1,14 @@
 matrix:
+  stages:
+    - ft
+    - depoly
   include:
-    - stage: unit_test
+    - &unit_test
       language: go
       go: 1.12.x
       script: echo go job
-    - stage: unit_test
+    - <<: *unit_test
+      stage: unit_test
       script: go env
     - &depoly
       stage: depoly
