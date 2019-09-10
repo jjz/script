@@ -7,9 +7,9 @@ matrix:
       python: 3.7
 
     - stage: unit_test
-        language: go
-        go: 1.12.x
-        script: go env
+      language: go
+      go: 1.12.x
+      script: go env
     - stage: depoly
       <<: *ft_job
       script: python --version
