@@ -1,11 +1,12 @@
 matrix:
+  - language: go
+      go: 1.12.x
+      script: echo go job
   stages:
     - ft
     - depoly
   include:
-    - language: go
-      go: 1.12.x
-      script: echo go job
+
     - stage: ft
       language: go
       go: 1.12.x
