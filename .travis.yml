@@ -1,7 +1,7 @@
 matrix:
-  - language: go
-      go: 1.12.x
-      script: echo go job
+   - language: go
+    go: 1.12.x
+    script: echo go job
   stages:
     - ft
     - depoly
