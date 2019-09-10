@@ -9,12 +9,12 @@ matrix:
       language: go
       go: 1.12.x
       script: go env
-    - depoly:
-    - &ft_job
+    - stage: depoly
+      &ft_job
       language: python
       python: 3.7
       script:
         - python --version
-    - depoly: depoly
+    - stage: depoly
       <<: *ft_job
       script: python --version
