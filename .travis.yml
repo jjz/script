@@ -1,13 +1,15 @@
 matrix:
   include:
-    - stage: unit_test
-      language: go
-      go: 1.12.x
-      script: go env
+
 
     - &ft_job
       language: python
       python: 3.7
+
+    - stage: unit_test
+        language: go
+        go: 1.12.x
+        script: go env
     - stage: depoly
       <<: *ft_job
       script: python --version
