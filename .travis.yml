@@ -16,5 +16,6 @@ matrix:
         script:
           - echo ft_job
     - stage: depoly
-      <<: *ft_job
+      deploy:
+        <<: *ft_job
         script: python --version
