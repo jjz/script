@@ -1,5 +1,5 @@
 matrix:
-   - language: go
+  - language: go
     go: 1.12.x
     script: echo go job
   stages:
