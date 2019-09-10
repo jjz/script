@@ -1,16 +1,18 @@
-jobs:
+matrix:
 
   stages:
     - ft
     - depoly
-  include:
-    - language: go
-      go: 1.12.x
-      script: echo go job
-    - stage: ft
-      language: go
-      go: 1.12.x
-      script: go env
+  jobs:
+    include:
+      - language: go
+        go: 1.12.x
+        script: echo go job
+      - stage: ft
+        language: go
+        go: 1.12.x
+        script: go env
+   jobs:
     - &depoly
       stage: depoly
       language: python
