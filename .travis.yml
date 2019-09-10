@@ -1,0 +1,6 @@
+matrix:
+  include:
+    - stage: unit_test
+      script: echo one
+    - stage: deploy
+      script: echo deploy
