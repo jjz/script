@@ -14,7 +14,7 @@ matrix:
         language: python
         python: 3.7
         script:
-          - python --version
+          - echo ft_job
     - stage: depoly
-      <<: *ft_job
-      script: python --version
+      depoly: <<: *ft_job
+        script: python --version
