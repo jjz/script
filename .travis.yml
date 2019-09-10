@@ -1,16 +1,19 @@
 matrix:
-  - &ft_job
-    language: python
-    python: 3.7
-    script:
-      - python --version
-  include:
 
+  stages:
+    - unit_test
+    - depoly
+  include:
 
     - stage: unit_test
       language: go
       go: 1.12.x
       script: go env
-    - stage: depoly
+    - depoly: &ft_job
+      language: python
+      python: 3.7
+      script:
+        - python --version
+    - depoly: depoly
       <<: *ft_job
       script: python --version
