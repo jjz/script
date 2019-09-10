@@ -3,21 +3,18 @@ matrix:
   stages:
     - ft
     - depoly
-  jobs:
-    include:
-      - language: go
-        go: 1.12.x
-        script: echo go job
-      - stage: ft
-        language: go
-        go: 1.12.x
-        script: go env
-   jobs:
-     include:
-      - &depoly
-        stage: depoly
-        language: python
-        python: 3.7
-        script: echo python 1
-      - <<: *depoly
-        script: echo python 2
+  include:
+    - language: go
+      go: 1.12.x
+      script: echo go job
+    - stage: ft
+      language: go
+      go: 1.12.x
+      script: go env
+    - &depoly
+      stage: depoly
+      language: python
+      python: 3.7
+      script: echo python 1
+    - <<: *depoly
+      script: echo python 2
