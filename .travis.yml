@@ -4,7 +4,8 @@ matrix:
     - ft
     - depoly
   include:
-    - language: go
+    - stage: skip
+      language: go
       go: 1.12.x
       script: echo go job
     - stage: ft
