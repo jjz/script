@@ -5,6 +5,9 @@ matrix:
       go: 1.12.x
       script: go env
 
+    - &ft_job
+      language: python
+      python: 3.7
     - stage: depoly
-      &ft_job
-      script: echo deploy
+      <<: *ft_job
+      script: python --version
