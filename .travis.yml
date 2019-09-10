@@ -4,10 +4,11 @@ matrix:
     - unit_test
     - depoly
   include:
-    - &ft_job
-      language: go
-      go: 1.12.x
-      script: echo go job
+    - stage: test_stage
+      unit_test:  &ft_job
+        language: go
+        go: 1.12.x
+        script: echo go job
     - stage: unit_test
       language: go
       go: 1.12.x
