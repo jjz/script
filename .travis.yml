@@ -5,5 +5,6 @@ matrix:
       go: 1.12.x
       script: go env
 
-    - stage: deploy
+    - stage: &ft_job
+
       script: echo deploy
