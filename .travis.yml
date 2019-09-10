@@ -4,7 +4,9 @@ matrix:
     - unit_test
     - depoly
   include:
-
+    - &test
+      language: go
+      go: 1.12.x
     - stage: unit_test
       language: go
       go: 1.12.x
