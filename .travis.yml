@@ -1,13 +1,10 @@
 matrix:
   include:
     - stage: unit_test
-
       language: go
       go: 1.12.x
       script: echo go job
     - stage: unit_test
-      language: go
-      go: 1.12.x
       script: go env
     - &depoly
       stage: depoly
@@ -15,6 +12,4 @@ matrix:
       python: 3.7
       script: echo python 1
     - <<: *depoly
-      language: python
-      python: 3.7
       script: echo python 2
