@@ -10,7 +10,7 @@ matrix:
       script: go env
     - language: go
       go: 1.12.x
-      script: echo go job
+      script: sleep 10
 
     - &depoly
       stage: depoly
