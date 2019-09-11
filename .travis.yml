@@ -4,14 +4,14 @@ matrix:
     - ft
     - depoly
   include:
-    - stage: ignore
-      language: go
-      go: 1.12.x
-      script: echo go job
     - stage: ft
       language: go
       go: 1.12.x
       script: go env
+    - language: go
+      go: 1.12.x
+      script: echo go job
+
     - &depoly
       stage: depoly
       language: python
