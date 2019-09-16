@@ -4,7 +4,9 @@ matrix:
       go: 1.12.x
       script: go env
       dist: bionic
-#      addons:
+      before_install:
+        - sudo -E apt-get -yq --no-install-suggests --no-install-recommends install python3-pip parallel g++-6 gcc-6 bzr build-essential
+    #      addons:
 #        apt:
 #          packages:
 #            - python3-pip
