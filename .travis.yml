@@ -3,6 +3,7 @@ matrix:
     - language: go
       go: 1.12.x
       script: go env
+      dist: bionic
       addons:
         apt:
           sources:
