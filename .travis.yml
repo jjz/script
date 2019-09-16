@@ -3,6 +3,16 @@ matrix:
     - language: go
       go: 1.12.x
       script: go env
+      addons:
+        apt:
+          sources:
+          packages:
+            - python3-pip
+            - parallel
+            - g++-6
+            - gcc-6
+            - bzr
+            - build-essential
     - language: go
       go: 1.12.x
       script: sleep 10
