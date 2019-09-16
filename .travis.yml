@@ -4,15 +4,15 @@ matrix:
       go: 1.12.x
       script: go env
       dist: bionic
-      addons:
-        apt:
-          packages:
-            - python3-pip
-            - parallel
-            - g++-6
-            - gcc-6
-            - bzr
-            - build-essential
+#      addons:
+#        apt:
+#          packages:
+#            - python3-pip
+#            - parallel
+#            - g++-6
+#            - gcc-6
+#            - bzr
+#            - build-essential
     - language: go
       go: 1.12.x
       script: sleep 10
