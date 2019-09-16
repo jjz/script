@@ -1,10 +1,5 @@
 matrix:
-
-  stages:
-    - ft
-    - depoly
   include:
-    - stage: ft
       language: go
       go: 1.12.x
       script: go env
@@ -13,7 +8,6 @@ matrix:
       script: sleep 10
 
     - &depoly
-      stage: depoly
       language: python
       python: 3.7
       script: echo python 1
