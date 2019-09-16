@@ -4,8 +4,14 @@ matrix:
       go: 1.12.x
       script: go env
       dist: bionic
+      addons:
+        apt:
+          packages:
+            - ccache
+      cache:
+        - ccache
       before_install:
-        - sudo -E apt-get -yq --no-install-suggests --no-install-recommends install python3-pip parallel g++-6 gcc-6 bzr build-essential
+        - sudo -E apt-get -yq --no-install-suggests --no-install-recommends install g++-6 gcc-6
     #      addons:
 #        apt:
 #          packages:
